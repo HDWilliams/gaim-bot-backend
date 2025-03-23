@@ -1,3 +1,6 @@
+"""
+Functions for testing retry_with_exp_backoff modules locally
+"""
 import sys
 import os
 
@@ -18,6 +21,15 @@ def generate_error(exeception: APIError) -> None:
     raise exeception
 
 def test_all_exceptions(exception: Exception) -> bool:
+    """test retry module with a specific exception. 
+    see documentation on specifics needed for creating instance of exception
+
+        Args:
+            exception: Exception instance
+
+        Returns:
+            bool
+    """
 
     print(f'Testing OpenAI api method with {str(exception)}')
     output = generate_error(exception)

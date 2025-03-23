@@ -1,3 +1,6 @@
+"""
+Main function of AWS Lambda function. Note: Need to import all packages into this function
+"""
 import time
 import json
 import logging
@@ -20,6 +23,15 @@ from open_ai_interfaces import make_openai_request, get_openai_response
 import PineconeInterface
 
 def lambda_handler(event, context):
+    """Manages lambda event. returns dict as json object
+
+    Args:
+        event: obj
+        content: obj
+
+    Returns:
+        {'statusCode: int, 'body': json}
+    """
     try:
         event_json = json.loads(event['body'])
         message_history = event_json['messages']
@@ -33,6 +45,7 @@ def lambda_handler(event, context):
             'statusCode': 200,
             'body': json.dumps(output)
         }
+    # TODO: catch more specific exceptions
     except Exception as error:
         return {
             'statusCode': 400,
