@@ -1,6 +1,6 @@
 # gaim-bot-backend
 ## Backend for updated gaim-bot v2 chatbot
-## https://gaimbotv2.streamlit.app/
+## http://ec2-3-87-212-100.compute-1.amazonaws.com/ or https://gaimbotv2.streamlit.app/
 
 ## Project Overview
 Gaim-bot is a retrieval and AI chatbot to answer natural language queries about the video game eldin ring. This backend repository contains funcationality for an AWS lambda function that
